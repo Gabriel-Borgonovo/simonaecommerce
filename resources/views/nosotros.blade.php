@@ -4,6 +4,6 @@
 
 @section('content')
 
-    <h1 class="text-center">Página de Inicio</h1>
+    <h1 class="text-center">Página de nosotros</h1>
 
 @endsection

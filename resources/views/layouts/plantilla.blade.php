@@ -11,7 +11,7 @@
     </title>
 </head>
 <body>
-    {{-- @include('layouts._partials.menu') --}}
+    @include('layouts._partials.menu')
     <main>
         @yield('content')
     </main>
