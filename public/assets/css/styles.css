@@ -22,25 +22,63 @@
 }
 
 
-
 .slider-slide.active{
     opacity: 1;
     visibility: visible;
 }
 
+.slider a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.slider a:hover{
+    background-color: yellow;
+}
+
+.slider a img{
+    width: 2rem;
+    height: 2rem;
+}
+
+.slider-btns{
+    position: absolute;
+    top: 50%;
+    width: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+}
+
 
 @media (min-width: 576px) { 
-    
+
  }
 
 
 @media (min-width: 768px) { 
-
+    
 }
 
 
 @media (min-width: 992px) { 
-    
+    .slider a img{
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .slider-btns{
+        width: 110%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
  }
 
 
