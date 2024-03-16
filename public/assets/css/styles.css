@@ -22,7 +22,7 @@
 }
 
 
-.slider-slide.active{
+.slider-slide.activado{
     opacity: 1;
     visibility: visible;
 }
@@ -55,6 +55,20 @@
     transform: translateX(-50%);
     display: flex;
     justify-content: space-between;
+}
+
+.slider-indicator{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-left: 3px;
+    margin-right: 3px;
+    border: none;
+    background-color: #ffc107;
+}
+
+.indicator-activado{
+    background-color: black;
 }
 
 
