@@ -1,6 +1,6 @@
 <div class="slider">
     <div class="slider-slides">
-        <div class="slider-slide activado d-flex justify-content-between overflow-hidden">
+        <div class="slider-slide activado bg-light d-flex justify-content-between overflow-hidden">
             <div class="align-self-center w-100 d-flex flex-column align-items-start">
                 <h4 class="display-3 text-start"><b class="text-warning">Simona</b> Ecommerce</h4>
                 <h5 class="text-start">Tienda de indumentaria y moda</h5>  
