@@ -10,7 +10,7 @@ class ProductController extends Controller
 {
     public function index(): View
     {
-        $products = Product::all();
+        $products = Product::all()->take(10);
         return view('index', compact('products'));
     }
 }

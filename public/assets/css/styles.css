@@ -79,6 +79,34 @@ body{
     background-color: black;
 }
 
+/* Products cards styles*/
+
+.card-index{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all .3s ease;
+}
+
+.card-index:hover{
+    background-color: #c1c1c2;
+}
+
+.fs-small{
+    font-size: 14px;
+}
+
+.triangle-offer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 15px 5px 3px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
 
 @media (min-width: 576px) { 
 
@@ -100,6 +128,12 @@ body{
         width: 110%;
         left: 50%;
         transform: translateX(-50%);
+    }
+
+    .card-index{
+        width: 25%;
+        margin-left: auto;
+        margin-right: auto;
     }
  }
 
