@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255);
-            $table->string('short-detail', 100);
-            $table->text('complete-detail');
-            $table->string('fabric-made');
+            $table->string('short_detail', 100);
+            $table->text('complete_detail');
+            $table->string('fabric_made');
             $table->string('size');
             $table->json('colors');
             $table->unsignedInteger('stock')->default(1)->nullable();
@@ -28,8 +28,8 @@ return new class extends Migration
             $table->string('width');
             $table->string('length');
             $table->tinyInteger('delivery')->default(0);
-            $table->boolean('main-img');
-            $table->text('detail-imgs');
+            $table->boolean('main_img');
+            $table->text('detail_imgs');
             $table->timestamps();
         });
     }
