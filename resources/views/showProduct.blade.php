@@ -9,16 +9,30 @@
 
 @section('content')
 
-
-    <h1>El Producto es: {{ $product->name }}</h1>
-    <section>
-        <img src="{{ $detailImgs[0] }}" alt="imagen" />
-        <div>
-            <img src="{{ $detailImgs[1] }}" alt="imagen" />
-            <img src="{{ $detailImgs[2] }}" alt="imagen" />
-            <img src="{{ $detailImgs[3] }}" alt="imagen" />
-        </div>
-    </section>
+<div class="container">
     
+    <div class="row mt-5">
+        <section class="col-12 col-lg-7 row img-detail-grid row">
 
+            <div class="col-12 col-lg-3 js-imgs gap-3 gap-lg-2 order-2 order-lg-0 d-flex flex-row flex-lg-column mt-3 mt-lg-0 flex-wrap">
+
+                @foreach($detailImgs as $index => $img)
+                    <img src="{{ $img }}" alt="imagen" class="img-mini{{ $index === 0 ? ' img-active' : '' }}" />
+                @endforeach
+            </div>
+
+            <div class="main-img-detail col-12 col-lg-9 js-main-img overflow-hidden rounded shadow">
+                <img src="{{ $detailImgs[0] }}" alt="imagen" class="img-fluid img-main" />
+            </div>
+            
+        </section>
+        <section class="col-12 col-lg-5">
+            <h1>Detalle del producto: {{ $product->name }}</h1>
+        </section>
+    </div>
+</div>
+
+@section('scripts')
+    <script src="{{ asset('assets/js/detailImgs.js')}}" ></script>
+@endsection
 @endsection

@@ -17,11 +17,6 @@ class ProductController extends Controller
     }
 
 
-    // public function show(Product $product): View
-    // {
-    //     return view('showProduct', compact('product'));
-    // }
-
     public function show($encryptedProductId)
     {
         $productId = Crypt::decrypt($encryptedProductId);
