@@ -11,6 +11,7 @@
     </title>
 </head>
 <body>
+    @include('layouts._partials.buscador')
     @include('layouts._partials.menu')
     <main>
         @yield('content')

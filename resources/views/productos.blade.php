@@ -16,10 +16,14 @@
              @endphp
 
         
-            <a href="{{ route('showProduct', encrypt($product->id)) }}" class="text-reset text-decoration-none">
+            <a href="{{ route('showProduct', $product->id) }}" class="text-reset text-decoration-none">
                 <img src="{{ isset($detailImgs[0]) ? $detailImgs[0] : 'default-image.jpg' }}" alt="imagen" class="img-card-index img-fluid"/>
                 <div>
                     <h2>{{ $product->name }}</h2>
+                    <p>{{ $product->short_detail }}</p>
+                    <small>$ <b class="text-secondary text-decoration-line-through">{{ $product->old_price }}</b> ARS</small>
+                    <small class="fs-5">$ <b class="text-warning-emphasis">{{ $product->current_price }}</b> ARS</small>
+                    <p class="mt-2 btn btn-warning fw-regular text-secondary-emphasis">Agregar al carrito</p>
                 </div>
             </a>
         
