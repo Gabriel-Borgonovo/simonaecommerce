@@ -6,21 +6,34 @@
 
     <h1 class="text-center">Página de productos</h1>
 
-
+    <div class="container">
+    <section class="row mt-5">
     @forelse ($products as $product)
+        <article class="col-6 col-lg-3 d-flex flex-column card-index mb-3">
+            @php
+                // Decode the detail_imgs JSON string into an array
+                $detailImgs = json_decode($product->detail_imgs, true);
+             @endphp
 
-        <h2>{{ $product->name }}</h2>
-        @php
-                                // Decode the detail_imgs JSON string into an array
-                                $detailImgs = json_decode($product->detail_imgs, true);
-                            @endphp
-
-                            <a href="{{ route('showProduct', encrypt($product->id)) }}" class="text-reset text-decoration-none">
-                                <img src="{{ isset($detailImgs[0]) ? $detailImgs[0] : 'default-image.jpg' }}" alt="imagen" class="img-card-index img-fluid"/>
-                            </a>
+        
+            <a href="{{ route('showProduct', encrypt($product->id)) }}" class="text-reset text-decoration-none">
+                <img src="{{ isset($detailImgs[0]) ? $detailImgs[0] : 'default-image.jpg' }}" alt="imagen" class="img-card-index img-fluid"/>
+                <div>
+                    <h2>{{ $product->name }}</h2>
+                </div>
+            </a>
+        
+        </article>
 
     @empty
         <p class="ps-5">No hay productos cargados en el sistema</p> 
     @endforelse
+
+    </section>
+
+        <div class="d-flex flex-column justify-content-center align-items-center my-5 color-success">
+            {{ $products->links('pagination::bootstrap-5') }}  
+        </div>
+    </div>
 
 @endsection
