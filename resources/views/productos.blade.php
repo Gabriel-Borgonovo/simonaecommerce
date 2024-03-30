@@ -16,7 +16,7 @@
              @endphp
 
         
-            <a href="{{ route('showProduct', $product->id) }}" class="text-reset text-decoration-none">
+            <a href="{{ route('showProduct', ['productId' => $product->id, 'productCategory' => $product->category]) }}" class="text-reset text-decoration-none">
                 <img src="{{ isset($detailImgs[0]) ? $detailImgs[0] : 'default-image.jpg' }}" alt="imagen" class="img-card-index img-fluid"/>
                 <div>
                     <h2>{{ $product->name }}</h2>

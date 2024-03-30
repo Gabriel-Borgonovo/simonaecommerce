@@ -17,12 +17,25 @@ class ProductController extends Controller
     }
 
 
-    public function show($productId)
-{
-    $product = Product::findOrFail($productId);
+    // public function show($productId)
+    // {
+    //     $product = Product::findOrFail($productId);
 
-    return view('showProduct', compact('product'));
-}
+    //     return view('showProduct', compact('product'));
+    // }
+
+    public function show($productId, $productCategory = null)
+    {
+        $product = Product::findOrFail($productId);
+
+        // Obtener productos relacionados si se proporciona una categoría
+        $relatedProducts = null;
+        if ($productCategory) {
+            $relatedProducts =  Product::where('category', $productCategory)->take(5)->get(); // Suponiendo que deseas obtener solo 5 productos relacionados
+        }
+
+        return view('showProduct', compact('product', 'relatedProducts'));
+    }
 
     public function allProducts()
     {
@@ -41,6 +54,7 @@ class ProductController extends Controller
 
         return view('busqueda', compact('products', 'searchQuery')); // Pass searchQuery to the view
     }
+
 
 
 }

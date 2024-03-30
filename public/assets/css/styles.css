@@ -154,6 +154,39 @@ body{
     transition: all .3s ease;
 }
 
+
+/* Estilos a la página de búsqueda */
+
+.m-auto{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.icon-alert{
+    width: 100px;
+}
+
+.animation-move{
+    animation: move 4s calc(1) linear;
+}
+
+@keyframes move{
+    0% {
+        opacity: 0.25;
+        transform: translateX(-100px);
+      }
+      20%,80% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      100% {
+        opacity: 0.25;
+        transform: translateX(100px);
+    }
+
+}
+
 @media (min-width: 576px) { 
 
  }
@@ -178,6 +211,12 @@ body{
 
     .card-index{
         width: 25%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .m-auto{
+        width: 60%;
         margin-left: auto;
         margin-right: auto;
     }
