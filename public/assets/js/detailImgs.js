@@ -1,4 +1,4 @@
-console.log('conectado la página de detalles del producto');
+
 
 const d = document;
 const $imgs = d.querySelectorAll('.js-imgs img'); // Select all imgs within .js-imgs

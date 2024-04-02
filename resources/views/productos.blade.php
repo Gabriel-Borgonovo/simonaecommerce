@@ -38,6 +38,8 @@
         <div class="d-flex flex-column justify-content-center align-items-center my-5 color-success">
             {{ $products->links('pagination::bootstrap-5') }}  
         </div>
+
+        
     </div>
 
 @endsection

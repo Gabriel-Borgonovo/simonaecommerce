@@ -171,6 +171,90 @@ body{
     animation: move 4s calc(1) linear;
 }
 
+
+
+/*releated products styles*/
+.wrapper .carousel{ 
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc(100% / 2);
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: 0;
+}
+
+.carousel::-webkit-scrollbar{
+    display: none;
+}
+
+.carousel.no-transition{
+    scroll-behavior: auto;
+}
+
+.carousel.dragging{
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+
+.carousel.dragging .card{
+    cursor: grab;
+    user-select: none;
+}
+
+.carousel .card{
+    /* scroll-snap-align: start; */
+    list-style: none;
+    background-color: #fff;
+    border-radius: 8px;
+    /* height: 342px; */
+    display: flex;
+    cursor: pointer;
+    align-items: start;
+    justify-content: flex-start;
+    flex-direction: column;
+    transition: all .3s ease;
+}
+
+.carousel .card:hover{
+    background-color: rgba(0, 0, 0, 0.377);
+}
+
+.img{
+    align-self: center;
+}
+
+.img img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.btns-related-products{
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+}
+
+.btns-related-products img{
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    box-shadow: 0 0 9px rgba(0, 0, 0, 0.377);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+
 @keyframes move{
     0% {
         opacity: 0.25;
@@ -188,7 +272,7 @@ body{
 }
 
 @media (min-width: 576px) { 
-
+    
  }
 
 
@@ -219,6 +303,19 @@ body{
         width: 60%;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .wrapper .carousel{ 
+        grid-auto-columns: calc((100% / 3) - 12px);
+    }
+
+   .img img{
+        object-fit: cover;
+    }
+
+    .btns-related-products{
+        top: 50%;
+        transform: translateY(-50%);
     }
  }
 
