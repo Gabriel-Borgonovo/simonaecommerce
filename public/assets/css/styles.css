@@ -253,8 +253,17 @@ body{
     cursor: pointer;
 }
 
+.text-bg-secondary{
+    transition: all .3s ease;
+}
+
+.text-bg-secondary:hover{
+    background-color: #ffc107 !important;
+    color: rgb(17, 17, 17) !important;
+}
 
 
+/* página de búsquedas not found*/
 @keyframes move{
     0% {
         opacity: 0.25;

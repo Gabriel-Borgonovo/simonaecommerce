@@ -15,7 +15,21 @@
                     <h2 class="text-center">Filtros</h2>
                     <div class="ps-5">
                         <h3 class="fw-normal fs-5">Por prendas</h3>
-                        <h3 class="fw-normal fs-5">Por marcas</h3>
+                            <div>
+                                <a href=""><span class="badge rounded-pill text-bg-secondary">Sweeter</span></a>
+                                <a href=""><span class="badge rounded-pill text-bg-secondary">Pantalones</span></a>
+                                <a href=""><span class="badge rounded-pill text-bg-secondary">Camisas</span></a>
+                                <a href=""><span class="badge rounded-pill text-bg-secondary">Zapatos</span></a>
+                                <a href=""><span class="badge rounded-pill text-bg-secondary">Vestidos</span></a>
+                            </div>
+                        <h3 class="fw-normal fs-5 mt-5">Por marcas</h3>
+                        <div class="mb-5">
+                            <a href=""><span class="badge rounded-pill text-bg-secondary">Nike</span></a>
+                            <a href=""><span class="badge rounded-pill text-bg-secondary">Solido</span></a>
+                            <a href=""><span class="badge rounded-pill text-bg-secondary">Bando</span></a>
+                            <a href=""><span class="badge rounded-pill text-bg-secondary">A+</span></a>
+                            <a href=""><span class="badge rounded-pill text-bg-secondary">Adidas</span></a>
+                        </div>
                     </div> 
                 </div> 
             </article>
