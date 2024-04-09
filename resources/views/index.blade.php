@@ -48,8 +48,8 @@
 
                             <a href="{{ route('showProduct', ['productId' => $product->id, 'productCategory' => $product->category]) }}" class="text-reset text-decoration-none">
                                 <div class="position-relative">
-                                    <img src="{{ isset($detailImgs[0]) ? $detailImgs[0] : 'default-image.jpg' }}" alt="imagen" class="img-card-index img-fluid"/>
-                                    <div class="triangle-offer bg-danger text-light">-30% OFF</div>
+                                    <img src="/imgs/{{ isset($product->main_img) ? $product->main_img : 'default-image.jpg' }}" alt="imagen" class="img-card-index img-fluid"/>
+                                    <div class="triangle-offer bg-danger text-light">-{{ intval($product->discount)}}% OFF</div>
                                 </div>
                             
                                 <div class="d-flex flex-column">

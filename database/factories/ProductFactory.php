@@ -32,9 +32,8 @@ class ProductFactory extends Factory
             'width' => fake()->randomNumber(2), // Random width between 10 and 99
             'length' => fake()->randomNumber(2), // Random length between 10 and 99
             'delivery' => fake()->boolean(),
-            'main_img' => fake()->boolean(), 
+            'main_img' => fake()->imageUrl(400, 400, 'fashion'), 
             'detail_imgs' => json_encode([ // Generate an array of 2-4 image URLs (replace with your placeholder URL logic)
-                fake()->imageUrl(400, 400, 'fashion'),
                 fake()->optional()->imageUrl(200, 200, 'fashion'),
                 fake()->optional()->imageUrl(200, 200, 'fashion'),
                 fake()->optional()->imageUrl(200, 200, 'fashion')

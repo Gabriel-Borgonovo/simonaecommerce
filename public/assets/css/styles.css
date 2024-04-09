@@ -35,7 +35,8 @@ body{
     visibility: visible;
 }
 
-.slider a{
+.slider .prev,
+.slider .next{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,7 +47,8 @@ body{
     transition: all 0.3s ease;
 }
 
-.slider a:hover{
+.slider .next:hover,
+.slider .prev:hover{
     background-color: yellow;
 }
 
@@ -151,6 +153,7 @@ body{
 .img-mini{
     width: 100px;
     height: 100px;
+    object-fit: cover;
     transition: all .3s ease;
 }
 

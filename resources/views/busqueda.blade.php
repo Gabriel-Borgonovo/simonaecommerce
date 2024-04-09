@@ -23,15 +23,12 @@
     @else
       @foreach ($products as $product)
 
-        @php
-          // Decode the detail_imgs JSON string into an array
-          $detailImgs = json_decode($product->detail_imgs, true);
-        @endphp
+       
         <a href="{{ route('showProduct', ['productId' => $product->id, 'productCategory' => $product->category]) }}" class="text-reset text-decoration-none">
           <section class="m-auto row bg-light shadow border rounded my-3">
             
             <div class="col-12 col-sm-4">
-              <img src="{{ $detailImgs[0] }}" alt="img-searched" class="img-fluid" />
+              <img src="/imgs/{{ $product->main_img }}" alt="img-searched" class="img-fluid" />
             </div>
             <div class="col-12 col-sm-8">
               <h3 class="pt-3">{{ $product->name }}</h3>

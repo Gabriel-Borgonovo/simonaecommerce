@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('width');
             $table->string('length');
             $table->tinyInteger('delivery')->default(0);
-            $table->boolean('main_img');
+            $table->string('main_img');
             $table->text('detail_imgs');
             $table->timestamps();
         });

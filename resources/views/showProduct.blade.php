@@ -1,5 +1,7 @@
 @extends('layouts.plantilla')
 
+@section('name', '{{ $product->name }}')
+
 @section('title', 'Home')
 
 @php
@@ -18,17 +20,17 @@
             <div class="col-12 col-lg-3 js-imgs gap-3 gap-lg-2 order-2 order-lg-0 d-flex flex-row flex-lg-column mt-3 mt-lg-0 flex-wrap">
 
                 @foreach($detailImgs as $index => $img)
-                    <img src="{{ $img }}" alt="imagen" class="img-mini{{ $index === 0 ? ' img-active' : '' }}" />
+                    <img src="/imgs/{{ $img }}" alt="imagen" class="img-mini{{ $index === 0 ? ' img-active' : '' }}" />
                 @endforeach
             </div>
 
             <div class="main-img-detail col-12 col-lg-9 js-main-img overflow-hidden rounded shadow">
-                <img src="{{ $detailImgs[0] }}" alt="imagen" class="img-fluid img-main" />
+                <img src="/imgs/{{ $product->main_img }}" alt="imagen" class="img-fluid img-main" />
             </div>
             
         </section>
         <section class="col-12 col-lg-5">
-            <h1>Detalle del producto: {{ $product->name }}</h1>
+            <h1>{{ $product->name }}</h1>
             <p>{{ $product->complete_detail }}</p>
             <p><b>Talle:</b> {{ $product->size }}</p>
             <p><b>Colores disponibles:</b>
@@ -40,6 +42,8 @@
             <p>Precio anterior: $ {{ $product->old_price }}</p>
             <p class="fs-2 fw-bold">$ {{ $product->current_price }} <small class="text-danger fs-5">%{{ intval($product->discount)}} OFF</small></p>
             <button class="btn btn-success">Comprar producto</button>
+            <p>Compartir</p>
+            
         </section>
     </div>
 
@@ -58,15 +62,12 @@
         <ul class="carousel" >
         @forelse($relatedProducts as $product)
 
-            @php
-                // Decode the detail_imgs JSON string into an array
-                $detailImgs = json_decode($product->detail_imgs, true);
-            @endphp
+           
 
             <li class="card">
                 <a href="{{ route('showProduct', ['productId' => $product->id, 'productCategory' => $product->category]) }}" class="text-reset text-decoration-none">
                 <div class="img">
-                    <img src="{{ $detailImgs[0] }}" alt="imagen carrousel" draggable="false">
+                    <img src="/imgs/{{ $product->main_img }}" alt="imagen carrousel" draggable="false">
                 </div>
                 <div>
                     <h2>{{ $product->name }}</h2>
