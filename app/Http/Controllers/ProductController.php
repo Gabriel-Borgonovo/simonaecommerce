@@ -17,21 +17,16 @@ class ProductController extends Controller
     }
 
 
-    // public function show($productId)
-    // {
-    //     $product = Product::findOrFail($productId);
-
-    //     return view('showProduct', compact('product'));
-    // }
-
-    public function show($productId, $productCategory = null)
+    public function show($pId, $productCategory = null)
     {
+        $productId = decrypt($pId);
         $product = Product::findOrFail($productId);
 
         // Obtener productos relacionados si se proporciona una categoría
         $relatedProducts = null;
         if ($productCategory) {
-            $relatedProducts =  Product::where('category', $productCategory)->take(5)->get(); // Suponiendo que deseas obtener solo 5 productos relacionados
+            $pCategory = $productCategory;
+            $relatedProducts =  Product::where('category', $pCategory)->take(5)->get(); // Suponiendo que deseas obtener solo 5 productos relacionados
         }
 
         return view('showProduct', compact('product', 'relatedProducts'));

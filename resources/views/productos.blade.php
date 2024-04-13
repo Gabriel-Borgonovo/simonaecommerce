@@ -9,9 +9,14 @@
     <div class="container">
     <section class="row mt-5">
     @forelse ($products as $product)
+
+        @php
+            $pId = Crypt::encrypt($product->id);
+            $pCategory = $product->category;
+        @endphp
         <article class="col-6 col-lg-3 d-flex flex-column card-index mb-3">
 
-            <a href="{{ route('showProduct', ['productId' => $product->id, 'productCategory' => $product->category]) }}" class="text-reset text-decoration-none">
+            <a href="{{ route('showProduct', ['productId' => $pId, 'productCategory' => $pCategory]) }}" class="text-reset text-decoration-none">
                 <img src="/imgs/{{ isset($product->main_img) ? $product->main_img : 'default-image.jpg' }}" alt="imagen" class="img-card-index img-fluid"/>
                 <div>
                     <h2>{{ $product->name }}</h2>

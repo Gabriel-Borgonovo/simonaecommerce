@@ -111,10 +111,7 @@ body{
 
 
 /* product detail page */
-/* .js-main-img{
-    max-height: 400px;
-    background-color: #ffc107;
-} */
+
 
 .js-main-img {
     max-height: 500px;
@@ -155,6 +152,25 @@ body{
     height: 100px;
     object-fit: cover;
     transition: all .3s ease;
+}
+
+.icono-share-width{
+    width: 40px;
+    height: 40px;
+}
+
+.title-share-btns{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.text-share-btns{
+    font-size: 10px;
+    width: 50px;
+}
+
+.top-negativo{
+    top: -50px;
 }
 
 

@@ -44,9 +44,11 @@
                             @php
                                 // Decode the detail_imgs JSON string into an array
                                 $detailImgs = json_decode($product->detail_imgs, true);
+                                $pId = Crypt::encrypt($product->id);
+                                $pCategory = $product->category;
                             @endphp
 
-                            <a href="{{ route('showProduct', ['productId' => $product->id, 'productCategory' => $product->category]) }}" class="text-reset text-decoration-none">
+                            <a href="{{ route('showProduct', ['productId' => $pId, 'productCategory' => $pCategory]) }}" class="text-reset text-decoration-none">
                                 <div class="position-relative">
                                     <img src="/imgs/{{ isset($product->main_img) ? $product->main_img : 'default-image.jpg' }}" alt="imagen" class="img-card-index img-fluid"/>
                                     <div class="triangle-offer bg-danger text-light">-{{ intval($product->discount)}}% OFF</div>

@@ -23,8 +23,11 @@
     @else
       @foreach ($products as $product)
 
-       
-        <a href="{{ route('showProduct', ['productId' => $product->id, 'productCategory' => $product->category]) }}" class="text-reset text-decoration-none">
+        @php
+          $pId = Crypt::encrypt($product->id);
+          $pCategory = $product->category;
+        @endphp
+        <a href="{{ route('showProduct', ['productId' => $pId , 'productCategory' => $pCategory]) }}" class="text-reset text-decoration-none">
           <section class="m-auto row bg-light shadow border rounded my-3">
             
             <div class="col-12 col-sm-4">
