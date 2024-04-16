@@ -10,3 +10,6 @@ Route::get('/productos/{productId}/{productCategory}', [ProductController::class
 Route::get('/productos', [ProductController::class, 'allProducts'])->name('productos');
 Route::view('/nosotros','nosotros')->name('nosotros');
 Route::view('/contacto','contacto')->name('contacto');
+
+// Nueva ruta para filtrar productos por categoría
+Route::get('/productos/filtrados', [ProductController::class, 'productosFiltrados'])->name('productosFiltrados');

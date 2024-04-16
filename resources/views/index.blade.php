@@ -16,19 +16,29 @@
                     <div class="ps-5">
                         <h3 class="fw-normal fs-5">Por prendas</h3>
                             <div>
-                                <a href=""><span class="badge rounded-pill text-bg-secondary">Sweeter</span></a>
-                                <a href=""><span class="badge rounded-pill text-bg-secondary">Pantalones</span></a>
-                                <a href=""><span class="badge rounded-pill text-bg-secondary">Camisas</span></a>
-                                <a href=""><span class="badge rounded-pill text-bg-secondary">Zapatos</span></a>
-                                <a href=""><span class="badge rounded-pill text-bg-secondary">Vestidos</span></a>
+                                @forelse ($products as $product)
+                                    @php
+                                        $prendas = json_decode($product->products, true);
+                                    @endphp 
+                                    <a href="{{ route('productosFiltrados', ['categoria' => 'prenda', 'valor' => $product->product]) }}">
+                                        <span class="badge rounded-pill text-bg-secondary">{{ $product->product }}</span>
+                                    </a>
+                                @empty
+                                    <p>No hay prendas</p>
+                                @endforelse
                             </div>
                         <h3 class="fw-normal fs-5 mt-5">Por marcas</h3>
                         <div class="mb-5">
-                            <a href=""><span class="badge rounded-pill text-bg-secondary">Nike</span></a>
-                            <a href=""><span class="badge rounded-pill text-bg-secondary">Solido</span></a>
-                            <a href=""><span class="badge rounded-pill text-bg-secondary">Bando</span></a>
-                            <a href=""><span class="badge rounded-pill text-bg-secondary">A+</span></a>
-                            <a href=""><span class="badge rounded-pill text-bg-secondary">Adidas</span></a>
+                                @forelse ($products as $product)
+                                    @php
+                                        $brands = json_decode($product->brands, true);
+                                    @endphp 
+                                    <a href="{{ route('productosFiltrados', ['categoria' => 'marca', 'valor' => $product->brand]) }}">
+                                        <span class="badge rounded-pill text-bg-secondary">{{ $product->brand }}</span>
+                                    </a>
+                                @empty
+                                    <p>No hay marcas</p>
+                                @endforelse
                         </div>
                     </div> 
                 </div> 

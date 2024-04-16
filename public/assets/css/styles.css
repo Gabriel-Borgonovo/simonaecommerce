@@ -6,6 +6,10 @@ body{
     background-color: #fff !important;
 }
 
+.logo-simona{
+    width: 100px;
+}
+
 .slider{
     position: relative;
     width: 80%;
@@ -344,6 +348,10 @@ body{
     .btns-related-products{
         top: 50%;
         transform: translateY(-50%);
+    }
+
+    .logo-simona{
+        width: 150px;
     }
  }
 
