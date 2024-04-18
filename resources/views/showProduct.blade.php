@@ -32,7 +32,7 @@
         <section class="col-12 col-lg-5 position-relative pt-5 p-lg-0">
             <h1 class="px-3">{{ $product->name }}</h1>
             <p class="px-3">{{ $product->complete_detail }}</p>
-            <p class="px-3"><b>Talle:</b> {{ $product->size }}</p>
+            <p class="px-3"><span><b>Talles:</b> {{ $product->size }}</span> <span class="ps-3"><b>Marca:</b> {{ $product->brand }}</span></p>
             <p class="px-3"><b>Colores disponibles:</b>
             @foreach($colors as $color)
              {{ $color }} |

@@ -178,7 +178,7 @@ body{
 }
 
 
-/* Estilos a la página de búsqueda */
+/* Estilos a la página de búsqueda y de filtrados */
 
 .m-auto{
     width: 80%;
@@ -193,6 +193,8 @@ body{
 .animation-move{
     animation: move 4s calc(1) linear;
 }
+
+
 
 
 
@@ -352,6 +354,11 @@ body{
 
     .logo-simona{
         width: 150px;
+    }
+
+    .height-filter-card{
+        max-height: 250px;
+        object-fit: cover;
     }
  }
 

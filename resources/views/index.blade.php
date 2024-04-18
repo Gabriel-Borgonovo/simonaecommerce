@@ -20,7 +20,7 @@
                                     @php
                                         $prendas = json_decode($product->products, true);
                                     @endphp 
-                                    <a href="{{ route('productosFiltrados', ['categoria' => 'prenda', 'valor' => $product->product]) }}">
+                                    <a href="{{ route('productosFiltrados', ['categoria' => 'prenda', 'valor' => $product->product]) }}" class="text-reset text-decoration-none">
                                         <span class="badge rounded-pill text-bg-secondary">{{ $product->product }}</span>
                                     </a>
                                 @empty
@@ -33,7 +33,7 @@
                                     @php
                                         $brands = json_decode($product->brands, true);
                                     @endphp 
-                                    <a href="{{ route('productosFiltrados', ['categoria' => 'marca', 'valor' => $product->brand]) }}">
+                                    <a href="{{ route('productosFiltrados', ['categoria' => 'marca', 'valor' => $product->brand]) }}" class="text-reset text-decoration-none">
                                         <span class="badge rounded-pill text-bg-secondary">{{ $product->brand }}</span>
                                     </a>
                                 @empty
@@ -47,7 +47,7 @@
             
             <div class="col-12 col-lg-9 my-5">
                <div class="bg-ligth border rounded shadow row">
-                    <h2 class="text-center">Productos</h2>
+                    <h2 class="text-center my-3">Productos</h2>
                     @forelse ($products as $product)
                         <article class="col-6 col-lg-3 d-flex flex-column card-index mb-3">
 

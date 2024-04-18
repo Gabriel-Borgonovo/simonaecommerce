@@ -28,17 +28,20 @@
           $pCategory = $product->category;
         @endphp
         <a href="{{ route('showProduct', ['productId' => $pId , 'productCategory' => $pCategory]) }}" class="text-reset text-decoration-none">
-          <section class="m-auto row bg-light shadow border rounded my-3">
+          <section class="m-auto row bg-light shadow border rounded my-3 height-filter-card">
             
             <div class="col-12 col-sm-4">
-              <img src="/imgs/{{ $product->main_img }}" alt="img-searched" class="img-fluid" />
+              <img src="/imgs/{{ $product->main_img }}" alt="img-searched" class="img-fluid height-filter-card" />
             </div>
-            <div class="col-12 col-sm-8">
-              <h3 class="pt-3">{{ $product->name }}</h3>
-              <p>{{ $product->short_detail }}</p>
+            <div class="col-12 col-sm-8 d-flex flex-column justify-content-between">
               <div>
-                <small>$ <b class="text-secondary text-decoration-line-through">{{ $product->old_price }}</b> ARS</small>
-                <small class="fs-5">$ <b class="text-warning-emphasis">{{ $product->current_price }}</b> ARS</small>
+                <h3 class="pt-3">{{ $product->name }}</h3>
+                <p>{{ $product->short_detail }}</p>
+                <p><b>Producto:</b> <small class="badge text-bg-primary">{{ $product->product}}</small></p>
+                <div>
+                  <small>$ <b class="text-secondary text-decoration-line-through">{{ $product->old_price }}</b> ARS</small>
+                  <small class="fs-5">$ <b class="text-warning-emphasis">{{ $product->current_price }}</b> ARS</small>
+                </div>
               </div>
               <p class="mt-2 btn btn-warning fw-regular text-secondary-emphasis">Agregar al carrito</p>
             </div>

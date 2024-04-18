@@ -51,5 +51,24 @@ class ProductController extends Controller
     }
 
 
+    public function productosFiltrados(Request $request)
+    {
+        $categoria = $request->input('categoria');
+        $valor = $request->input('valor');
+
+        // Filtrar los productos según la categoría y el valor
+        if ($categoria === 'marca') {
+            $productosFiltrados = Product::where('brand', $valor)->paginate(10);
+        } elseif ($categoria === 'prenda') {
+            $productosFiltrados = Product::where('product', $valor)->paginate(10);
+        } else {
+            // Si la categoría no es "marca" ni "prenda", puedes manejar el caso como desees
+            // Por ejemplo, mostrar un mensaje de error o redirigir a otra página
+            return redirect()->back()->with('error', 'Categoría no válida');
+        }
+
+        // Devolver la vista con los productos filtrados
+        return view('productosFiltrados', compact('productosFiltrados', 'valor'));
+    }
 
 }
