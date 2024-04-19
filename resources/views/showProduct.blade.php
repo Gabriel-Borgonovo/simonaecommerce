@@ -41,7 +41,7 @@
             <p class="px-3"><b>Stock:</b> {{ $product->stock}}</p>
             <p class="px-3">Precio anterior: $ {{ $product->old_price }}</p>
             <p class="px-3 fs-2 fw-bold">$ {{ $product->current_price }} <small class="text-danger fs-5">%{{ intval($product->discount)}} OFF</small></p>
-            <button class="px-3 btn btn-success">Comprar producto</button>
+            <button class="px-3 btn btn-success" onclick="enviarMensaje()">Comprar producto</button>
             
             <div class="d-flex flex-column justify-content-end position-absolute bottom-0 top-lg-0 end-0 p-2 bg-light rounded shadow">
                 <h3 class="title-share-btns">Compartir</h3>
@@ -52,17 +52,31 @@
                     $encoded_whatsapp_message = rawurlencode($whatsapp_message);
                     $image_url = 'https://modasimona.mi-rio2.com/imgs/' . $product->main_img; 
                     $encoded_image_url = urlencode($image_url);
+
+                       
+                    // Variables necesarias para el enlace de Facebook
+                    $facebook_url = route('showProduct', ['productId' => $pId, 'productCategory' => $pCategory]);
+
+                    // Variable necesaria para la imagen de Instagram
+                    $image_url = 'https://modasimona.mi-rio2.com/imgs/' . $product->main_img; 
                 @endphp
 
+                {{-- whatsapp button --}}
                 <a href="whatsapp://send?text={{ $encoded_whatsapp_message }}&?image={{ $encoded_image_url }}" data-action="share/whatsapp/share" class="btn text-reset d-flex flex-column justify-content-center align-items-center p-1">
                     <img src="/imgs/whatsapp.svg" alt="icono whatsapp" class="icono-share-width p-0">
                     <span class="text-share-btns p-0">Whatsapp</span>
                 </a>
 
                 {{-- facebook button --}}
-                <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('showProduct', ['productId' => $pId, 'productCategory' => $pCategory]) }}" target="_blank" class="btn text-reset d-flex flex-column justify-content-center align-items-center p-1">
-                    <img src="/imgs/facebook.svg" alt="icono whatsapp" class="icono-share-width p-0">
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{ $facebook_url }}" target="_blank" class="btn text-reset d-flex flex-column justify-content-center align-items-center p-1">
+                    <img src="/imgs/facebook.svg" alt="icono facebook" class="icono-share-width p-0">
                     <span class="text-share-btns p-0">Facebook</span>
+                </a>
+                
+                {{-- instagram button --}}
+                <a href="https://www.instagram.com/?url={{ $facebook_url }}&media={{ $image_url }}&caption={{ $product->name }}" target="_blank" class="btn text-reset d-flex flex-column justify-content-center align-items-center p-1">
+                    <img src="/imgs/instagram.svg" alt="icono instagram" class="icono-share-width p-0">
+                    <span class="text-share-btns p-0">Instagram</span>
                 </a>
 
             </div>
@@ -113,3 +127,26 @@
     <script src="{{ asset('assets/js/cardCarrousel.js')}}"></script>
 @endsection
 @endsection
+
+
+
+<script>
+    function enviarMensaje() {
+        let nombreProducto = "{{ $product->name }}";
+        let imagenProducto = "{{ asset('imgs/' . $product->main_img) }}";
+        let urlProducto = "{{ route('showProduct', ['productId' => $pId, 'productCategory' => $product->category]) }}";
+    
+        // Crear el mensaje de WhatsApp con el enlace al producto y la imagen
+        let mensaje = "¡Hola! Estoy interesad@ en comprar el producto '" + nombreProducto + "'.";
+        mensaje += "\n Podría darme más info? \n";
+        mensaje += "link del producto: " + urlProducto;
+        mensaje += "\n Imagen del producto: " + imagenProducto;
+    
+        // Codificar el mensaje para que se pueda enviar correctamente en la URL
+        let mensajeCodificado = encodeURIComponent(mensaje);
+    
+        // Abrir la ventana de chat de WhatsApp con el mensaje predefinido
+        window.open("https://wa.me/3572591668/?text=" + mensajeCodificado, "_blank");
+    }
+</script>
+
