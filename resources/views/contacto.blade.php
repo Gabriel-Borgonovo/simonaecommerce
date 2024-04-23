@@ -4,6 +4,9 @@
 
 @section('content')
 
-    <h1 class="text-center">Página de contacto</h1>
+    <div class="min-vh-100">
+       <h1 class="text-center">Página de contacto</h1> 
+    </div>
+    
 
 @endsection

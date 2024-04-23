@@ -4,6 +4,8 @@
 
 @section('content')
 
+    <div class="min-vh-100">
+
     <h1 class="text-center">Filtrado por {{ $valor }}</h1>
 
     @foreach ($productosFiltrados as $productFiltrado)
@@ -33,5 +35,7 @@
           
         </section>
       </a>
+
+    </div>
     @endforeach
 @endsection

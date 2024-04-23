@@ -16,10 +16,7 @@
                     <div class="ps-5">
                         <h3 class="fw-normal fs-5">Por prendas</h3>
                             <div>
-                                @forelse ($products as $product)
-                                    @php
-                                        $prendas = json_decode($product->products, true);
-                                    @endphp 
+                                @forelse ($products->unique('product') as $product)
                                     <a href="{{ route('productosFiltrados', ['categoria' => 'prenda', 'valor' => $product->product]) }}" class="text-reset text-decoration-none">
                                         <span class="badge rounded-pill text-bg-secondary">{{ $product->product }}</span>
                                     </a>
@@ -27,18 +24,17 @@
                                     <p>No hay prendas</p>
                                 @endforelse
                             </div>
+
                         <h3 class="fw-normal fs-5 mt-5">Por marcas</h3>
+
                         <div class="mb-5">
-                                @forelse ($products as $product)
-                                    @php
-                                        $brands = json_decode($product->brands, true);
-                                    @endphp 
-                                    <a href="{{ route('productosFiltrados', ['categoria' => 'marca', 'valor' => $product->brand]) }}" class="text-reset text-decoration-none">
-                                        <span class="badge rounded-pill text-bg-secondary">{{ $product->brand }}</span>
-                                    </a>
-                                @empty
-                                    <p>No hay marcas</p>
-                                @endforelse
+                            @forelse ($products->unique('brand') as $product)
+                                <a href="{{ route('productosFiltrados', ['categoria' => 'marca', 'valor' => $product->brand]) }}" class="text-reset text-decoration-none">
+                                    <span class="badge rounded-pill text-bg-secondary">{{ $product->brand }}</span>
+                                </a>
+                            @empty
+                                <p>No hay marcas</p>
+                            @endforelse
                         </div>
                     </div> 
                 </div> 

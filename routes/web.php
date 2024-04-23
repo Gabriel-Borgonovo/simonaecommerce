@@ -9,7 +9,7 @@ Route::get('/productos/search', [ProductController::class, 'search'])->name('sea
 Route::get('/productos/{productId}/{productCategory}', [ProductController::class, 'show'])->name('showProduct');
 Route::get('/productos', [ProductController::class, 'allProducts'])->name('productos');
 Route::view('/nosotros','nosotros')->name('nosotros');
-Route::view('/contacto','contacto')->name('contacto');
+// Route::view('/contacto','contacto')->name('contacto');
 
 // Nueva ruta para filtrar productos por categoría
 Route::get('/productos/filtrados', [ProductController::class, 'productosFiltrados'])->name('productosFiltrados');

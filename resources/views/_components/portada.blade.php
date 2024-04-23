@@ -4,7 +4,7 @@
             <div class="align-self-center w-100 d-flex flex-column align-items-start">
                 <h4 class="display-3 text-start"><b class="text-warning">Simona</b> Ecommerce</h4>
                 <h5 class="text-start">Tienda de indumentaria y moda</h5>  
-                <p class="text-start">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur omnis voluptates optio cupiditate iste at iusto, aliquid earum, commodi qui ea nisi explicabo debitis reiciendis sunt libero velit sint consequuntur.</p>
+                <p class="text-start">Explora Simona Ecommerce, tu destino para la última moda en indumentaria. Encuentra una amplia selección de prendas y accesorios de estilo único en nuestra tienda online. ¡Descubre lo mejor en tendencias!</p>
                 <a href="{{ route('productos') }}" class="btn btn-warning">Ver productos</a>
             </div>
             

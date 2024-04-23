@@ -4,6 +4,7 @@
 
 @section('content')
 
+<div class="min-vh-100">
   @if (isset($searchQuery))
     <h1 class="fs-5 text-center fw-normal text-secondary mt-5">Resultados de: "<b>{{ $searchQuery }}</b>"</h1>
 
@@ -55,7 +56,7 @@
           {{ $products->links('pagination::bootstrap-5') }}  
         </div> 
     @endif
-
+</div>
   @else
     <h1>Todos los productos</h1>
 
