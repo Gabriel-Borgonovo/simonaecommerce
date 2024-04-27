@@ -18,8 +18,8 @@
                 <a href="{{ route('productos') }}" class="btn btn-warning">Ver productos</a>
             </div>
 
-            <img src="/imgs/slider2.jpg" alt="1" class="img-fluid d-none d-lg-block">
-            <img src="/imgs/slider2-movil.jpg" alt="1" class="img-fluid d-lg-none">
+            <img src="/imgs/slider2.jpg" alt="1" class="img-fluid d-lg-block">
+            {{-- <img src="/imgs/slider2-movil.jpg" alt="1" class="img-fluid d-lg-none"> --}}
             
         </div>
 

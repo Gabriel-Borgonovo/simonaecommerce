@@ -145,6 +145,7 @@
         let nombreProducto = "{{ $product->name }}";
         let imagenProducto = "{{ asset('imgs/' . $product->main_img) }}";
         let urlProducto = "{{ route('showProduct', ['productId' => $pId, 'productCategory' => $product->category]) }}";
+        let telefonoWhatsApp = "{{ env('WHATSAPP_PHONE_NUMBER') }}"; // Obtener el número de teléfono desde .env
     
         // Crear el mensaje de WhatsApp con el enlace al producto y la imagen
         let mensaje = "¡Hola! Estoy interesad@ en comprar el producto '" + nombreProducto + "'.";
@@ -156,7 +157,7 @@
         let mensajeCodificado = encodeURIComponent(mensaje);
     
         // Abrir la ventana de chat de WhatsApp con el mensaje predefinido
-        window.open("https://wa.me/3572591668/?text=" + mensajeCodificado, "_blank");
+        window.open("https://wa.me/" + telefonoWhatsApp + "/?text=" + mensajeCodificado, "_blank");
     }
 </script>
 
