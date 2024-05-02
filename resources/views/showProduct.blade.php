@@ -62,7 +62,7 @@
                 @endphp
 
                 {{-- whatsapp button --}}
-                <a href="whatsapp://send?text={{ $encoded_whatsapp_message }}&?image={{ $encoded_image_url }}" data-action="share/whatsapp/share" class="btn text-reset d-flex flex-column justify-content-center align-items-center p-1">
+                <a href="whatsapp://send?text={{ $encoded_whatsapp_message }}&?image={{ $encoded_image_url }}" data-action="share/whatsapp/share" class="btn text-reset d-flex flex-column justify-content-center align-items-center p-1 d-lg-none">
                     <img src="/imgs/whatsapp.svg" alt="icono whatsapp" class="icono-share-width p-0">
                     <span class="text-share-btns p-0">Whatsapp</span>
                 </a>

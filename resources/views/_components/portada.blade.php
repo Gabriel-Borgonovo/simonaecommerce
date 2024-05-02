@@ -1,6 +1,6 @@
 <div class="slider">
     <div class="slider-slides">
-        <div class="slider-slide activado bg-light d-flex justify-content-between overflow-hidden">
+        <div class="slider-slide activado bg-light d-flex flex-column flex-lg-row justify-content-between overflow-hidden">
             <div class="align-self-center w-100 d-flex flex-column align-items-start">
                 <h4 class="display-3 text-start"><b class="text-warning">Simona</b> Ecommerce</h4>
                 <h5 class="text-start">Tienda de indumentaria y moda</h5>  
@@ -8,13 +8,13 @@
                 <a href="{{ route('productos') }}" class="btn btn-warning">Ver productos</a>
             </div>
             
-            <img src="/imgs/saco-rosa-zafira3.jpg" alt="1" class="d-none d-lg-block">
+            <img src="/imgs/saco-rosa-zafira3.jpg" alt="1" class="d-lg-block">
         </div>
 
         <div class="slider-slide bg-lg-warning d-flex flex-column flex-lg-row rounded justify-content-between overflow-hidden">
             <div class="align-self-center text-start w-100 d-flex flex-column align-items-start p-1 p-lg-5">
                 <h2 class="display-4 text-start">Outfit completo para salir</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque neque, minima cumque magni quo magnam accusantium, dignissimos consequuntur tempore optio laborum molestiae iste! Pariatur possimus, odit asperiores tempora ipsa ratione.</p>
+                <p>Encuentra la combinación ideal para tus salidas en nuestro catálogo de outfits completos. Descubre prendas versátiles y de tendencia que te harán lucir radiante en cada ocasión. ¡Explora nuestra selección hoy mismo!</p>
                 <a href="{{ route('productos') }}" class="btn btn-warning">Ver productos</a>
             </div>
 
@@ -26,22 +26,22 @@
         <div class="slider-slide bg-lg-warning d-flex flex-column flex-lg-row rounded justify-content-between overflow-hidden">
             <div class="align-self-center text-start w-100 d-flex flex-column align-items-start p-1 p-lg-5">
                 <h2 class="display-4 text-start">Llego la temporada otoño - invierno</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque neque, minima cumque magni quo magnam accusantium, dignissimos consequuntur tempore optio laborum molestiae iste! Pariatur possimus, odit asperiores tempora ipsa ratione.</p>
+                <p>Prepárate para abrigarte con estilo esta temporada otoño-invierno. Descubre nuestras nuevas colecciones con lo último en moda para mantenerte cálida y a la moda. ¡Explora ahora y encuentra tu look perfecto!</p>
                 <a href="{{ route('productos') }}" class="btn btn-warning">Ver productos</a>
             </div>
 
-            <img src="/imgs/buzo-dep-california.jpg" alt="1" class="img-fluid d-none d-lg-block">
+            <img src="/imgs/buzo-dep-california.jpg" alt="1" class="img-fluid d-lg-block">
             
         </div>
 
         <div class="slider-slide bg-lg-warning d-flex flex-column flex-lg-row rounded justify-content-between overflow-hidden">
             <div class="align-self-center text-start w-100 d-flex flex-column align-items-start p-1 p-lg-5">
                 <h2 class="display-4 text-start">Llegaron los conjuntos deportivos!!!</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque neque, minima cumque magni quo magnam accusantium, dignissimos consequuntur tempore optio laborum molestiae iste! Pariatur possimus, odit asperiores tempora ipsa ratione.</p>
+                <p>¡Eleva tu juego con nuestra última llegada! Descubre nuestra colección de conjuntos deportivos que te acompañarán en cada movimiento. Encuentra comodidad y estilo para tus entrenamientos. ¡Explora ahora y destaca en el deporte!</p>
                 <a href="{{ route('productos') }}" class="btn btn-warning">Ver productos</a>
             </div>
 
-            <img src="/imgs/conjunto-mujer-deportivo.jpg" alt="1" class="img-fluid d-none d-lg-block">
+            <img src="/imgs/conjunto-mujer-deportivo.jpg" alt="1" class="img-fluid d-lg-block">
             
         </div>
     </div>
