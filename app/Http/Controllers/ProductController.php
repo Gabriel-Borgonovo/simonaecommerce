@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SearchRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
@@ -39,13 +40,16 @@ class ProductController extends Controller
     }
 
 
-    public function search(Request $request): View
+    public function search(SearchRequest $request): View
     {
         $searchQuery = $request->input('busqueda'); // Get the search query from the URL
 
-        $products = Product::where('name', 'like', "%{$searchQuery}%")
-                        
-                        ->paginate(10); // Paginate results for efficiency
+        if (!empty($searchQuery)) {
+            $products = Product::where('name', 'like', "%{$searchQuery}%")
+                               ->paginate(10);
+        } else {
+            $products = Product::paginate(10);
+        }
 
         return view('busqueda', compact('products', 'searchQuery')); // Pass searchQuery to the view
     }
