@@ -20,7 +20,7 @@
 
     <div class="text-light" id="contacto-data">
         <h2 class="fs-4 text-warning">Contacto</h2>
-        <button class="btn btn-success">Enviar Whatsapp</button>
+        <a href="https://api.whatsapp.com/send?phone={{ env('WHATSAPP_PHONE_NUMBER') }}" class="btn btn-success" target="_blank">Enviar Whatsapp</a>
     </div>
 
     </section>
